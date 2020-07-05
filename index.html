@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <!-- CSS style -->
+    <link rel="stylesheet" href="css/style.css" />
+    <!-- Google fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+      integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0="
+      crossorigin="anonymous"
+    />
+    <!-- CDN jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- CDN handlebars -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.2/handlebars.js"
+      integrity="sha256-N5vR06TQIR+YD8oS0yndB1pu/EITeijW52dwezEq7/g="
+      crossorigin="anonymous"
+    ></script>
+    <!-- MOMENTJS -->
+    <script
+      src="https://momentjs.com/downloads/moment.min.js"
+      charset="utf-8"
+    ></script>
+
+    <title>Boolflix</title>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="img/logo2.jpg" alt="" />
+      </div>
+      <div class="search-bar">
+        <input id="search_movies" type="text" name="" value="" />
+        <button id="search_btn" type="button" name="button">Search</button>
+      </div>
+    </header>
+    <main class="main_content">
+      <div class="wrapper_85">
+        <h2 class="section_title">Cinema</h2>
+        <section class="cinema flex">
+          <ul class="movies_list_container"></ul>
+        </section>
+        <h2 class="section_title">SerieTV</h2>
+        <section class="serie flex">
+          <ul class="series_list_container"></ul>
+        </section>
+      </div>
+    </main>
+
+    <!-- Films e Serie TV -->
+    <script id="film-series-template" type="text/x-handlebars-template">
+      <li class="movie_serie_item" data-id="{{id}}">
+        <div class="item_wrapper">
+          <img class="poster" src="{{{poster_path}}}" alt="" />
+          <div class="info_wrapper">
+            <ul class="text_left info_list">
+              <li>
+                <span>
+                  Tipo:
+                </span>{{type}}
+              </li>
+              <li>
+                <span>
+                  Titolo:
+                </span>{{title}}
+              </li>
+              <li>
+                <span>
+                  Titolo Originale:
+                </span>
+                {{original_title}}
+              </li>
+              <li>
+                <span>
+                  Lingua Originale:
+                </span>
+                {{{original_language}}}
+              </li>
+              <li>
+                <span>
+                  Voto agli awards:
+                </span>
+                {{{vote_average}}}
+              </li>
+              <li>
+                <span>
+                  Cast:
+                </span>
+
+                <span class="cast"></span>
+              </li>
+              <li>
+                <div class="trama">
+                  <span>
+                    Trama:
+                  </span>{{overview}}
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </script>
+    <!-- Nessun risultato presente -->
+    <script id="noresult-template" type="text/x-handlebars-template">
+      <li>
+        Nessun risultato per la tua ricerca
+      </li>
+    </script>
+    <!-- JS script -->
+    <script src="js/script.js" charset="utf-8"></script>
+  </body>
+</html>
