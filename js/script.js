@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(document).on("click", "#search_btn", function () {
+  $(document).on("click", "#btn-search", function () {
     var query = $("#search_movies").val();
     resetSearch();
     printSingleMovie(query);
